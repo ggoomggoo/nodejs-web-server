@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/t1t1/nodejs-web-server#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "sequelize": "^4.37.5",
+    "sqlite3": "^4.0.0"
   }
 }
