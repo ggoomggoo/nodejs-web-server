@@ -1,47 +1,7 @@
 var express = require('express');
 var app = express();
-var Sequelize = require('sequelize');
-var sequelize = new Sequelize('sqlite:sample.db');
 var bodyParser = require('body-parser');
-
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
-
-var User = sequelize.define('user', {
-    id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
-    name: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    age: {
-        type: Sequelize.INTEGER,
-        allowNull: true
-    }
-});
-
-User.sync({ force: true })
-    .then(function() {
-        return User.create({
-            name: 'John',
-            age: 20
-        });
-    })
-    .then(function() {
-        return User.create({
-            name: 'James',
-            age: 23
-        });
-    });
+var User = require('./models/User');
 
 app.use(bodyParser.json());
 
