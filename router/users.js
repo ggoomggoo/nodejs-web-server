@@ -12,9 +12,9 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     User.create(req.body)
-    .then(() => {
-        res.send('success create');
-    });
+        .then(() => {
+            res.send('success create');
+        });
 });
 
 router.get('/:id', (req, res) => {
@@ -25,13 +25,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    User.update(
-        req.body,
-        { where: { id: req.params.id } }
-    )
-    .then(() => {
-        res.send('success update');
-    });
+    User.update(req.body,{ where: { id: req.params.id } })
+        .then(() => {
+            res.send('success update');
+        });
 });
 
 router.delete('/:id', (req, res) => {
