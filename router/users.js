@@ -1,42 +1,42 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var User = require('../models/User');
+const User = require('../models/User');
 
-router.get('/', function(req, res) {
+router.get('/', (req, res) => {
     User.findAll()
-        .then(function(users) {
+        .then((users) => {
             res.json(users);
         });
 });
 
-router.post('/', function(req, res) {
+router.post('/', (req, res) => {
     User.create(req.body)
-    .then(function() {
+    .then(() => {
         res.send('success create');
     });
 });
 
-router.get('/:id', function(req, res) {
+router.get('/:id', (req, res) => {
     User.findOne({ id: req.params.id })
-        .then(function(user) {
+        .then((user) => {
             res.json(user);
         });
 });
 
-router.put('/:id', function(req, res) {
+router.put('/:id', (req, res) => {
     User.update(
         req.body,
         { where: { id: req.params.id } }
     )
-    .then(function() {
+    .then(() => {
         res.send('success update');
     });
 });
 
-router.delete('/:id', function(req, res) {
+router.delete('/:id', (req, res) => {
     User.destroy({ where: { id: req.params.id } })
-        .then(function() {
+        .then(() => {
             res.send('success destory');
         });
 });

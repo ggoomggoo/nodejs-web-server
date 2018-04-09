@@ -1,5 +1,5 @@
-var Sequelize = require('sequelize');
-var sequelize = new Sequelize('sqlite:sample.db');
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('sqlite:sample.db');
 
 sequelize
   .authenticate()

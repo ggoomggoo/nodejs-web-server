@@ -1,7 +1,7 @@
-var Sequelize = require('sequelize');
-var sequelize = require('../sequelize');
+const Sequelize = require('sequelize');
+const sequelize = require('../sequelize');
 
-var User = sequelize.define('user', {
+const User = sequelize.define('user', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -18,13 +18,13 @@ var User = sequelize.define('user', {
 });  
 
 User.sync({ force: true })
-    .then(function() {
+    .then(() => {
         return User.create({
             name: 'John',
             age: 20
         });
     })
-    .then(function() {
+    .then(() => {
         return User.create({
             name: 'James',
             age: 23
