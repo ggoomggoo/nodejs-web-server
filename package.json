@@ -2,10 +2,10 @@
   "name": "nodejs-web-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "mocha ./spec/**/*.spec.js",
-    "start": "node index.js",
+    "start": "node app.js",
     "lint-js": "eslint *.js --no-ignore"
   },
   "repository": {

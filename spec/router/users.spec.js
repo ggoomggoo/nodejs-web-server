@@ -1,7 +1,7 @@
 const request = require('supertest');
 const should = require('should');
 
-const app = require('../../index');
+const app = require('../../app');
 
 describe('users api', () => {
     it('GET /users should ...', (done) => {
