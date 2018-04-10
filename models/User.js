@@ -1,34 +1,22 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../sequelize');
-
-const User = sequelize.define('user', {
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  var test = sequelize.define('user', {
     id: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
     name: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     age: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: true
     }
-});  
-
-User.sync({ force: true })
-    .then(() => {
-        return User.create({
-            name: 'John',
-            age: 20
-        });
-    })
-    .then(() => {
-        return User.create({
-            name: 'James',
-            age: 23
-        });
-    });
-
-module.exports = User;
+  }, {});
+  test.associate = function(models) {
+    // associations can be defined here
+  };
+  return test;
+};
