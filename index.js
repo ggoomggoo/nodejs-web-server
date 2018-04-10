@@ -2,8 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+const db = require('./models');
+
 const home = require('./router/home');
 const users = require('./router/users');
+
+db.sequelize.sync();
 
 app.use(bodyParser.json());
 
