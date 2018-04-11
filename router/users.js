@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 
 const User = require('../models').user;
@@ -25,7 +26,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    User.update(req.body,{ where: { id: req.params.id } })
+    User.update(req.body, { where: { id: req.params.id } })
         .then(() => {
             res.send('success update');
         });
