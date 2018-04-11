@@ -29,6 +29,8 @@
     "body-parser": "^1.18.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
+    "faker": "^4.1.0",
+    "lodash": "^4.17.5",
     "sequelize": "^4.37.5",
     "sqlite3": "^4.0.0"
   },
