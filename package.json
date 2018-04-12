@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha ./spec/**/*.spec.js",
     "debug": "node --nolazy --inspect-brk=9229 app.js",
-    "start": "nodemon app.js --exec \"npm run lint && node\"",
+    "dev": "nodemon app.js --exec \"npm run lint && node\"",
+    "start": "nodemon app.js",
     "lint": "eslint */js ./**/*.js",
     "lint-fix": "eslint */js ./**/*.js --fix"
   },
