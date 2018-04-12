@@ -1,0 +1,23 @@
+{
+  "local": {
+    "username": null,
+    "password": null,
+    "database": null,
+    "host": null,
+    "dialect": "sqlite"
+  },
+  "dev": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "prod": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
